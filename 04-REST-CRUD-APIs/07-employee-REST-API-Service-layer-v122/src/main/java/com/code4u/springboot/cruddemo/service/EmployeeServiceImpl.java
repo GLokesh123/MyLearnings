@@ -1,0 +1,23 @@
+package com.code4u.springboot.cruddemo.service;
+
+import com.code4u.springboot.cruddemo.dao.EmployeeDAO;
+import com.code4u.springboot.cruddemo.entity.Employee;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService{
+    private EmployeeDAO employeeDAO;
+
+    public EmployeeServiceImpl(EmployeeDAO employeeDAO)
+    {
+        this.employeeDAO=employeeDAO;
+    }
+
+    @Override
+    public List<Employee> findAll() {
+
+        return employeeDAO.getAll();
+    }
+}
