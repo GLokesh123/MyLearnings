@@ -2,10 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>ThymeleafDemo</title>
+    <title>Hello response</title>
     <link rel="stylesheet" th:href="@{/css/stylo.css}"/>
 </head>
 <body>
-<h1 th:text="'Hello sirrr! its '+${theData}" class="funny"></h1>
+<h1 th:text="'Hello Mr.'+${param.userName}+'!!!'" class="funny"></h1>
 </body>
 </html>
