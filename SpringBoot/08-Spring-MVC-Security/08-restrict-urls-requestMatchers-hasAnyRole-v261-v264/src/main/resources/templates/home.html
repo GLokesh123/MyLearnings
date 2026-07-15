@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1><i>Now or Never</i></h1>
+<p>
+    User: <span sec:authentication="principal.username"></span>
+    <br>
+    Role: <span sec:authentication="principal.authorities"></span>
+</p>
+<hr>
+<a th:href="@{/leaders}">leaders news</a>(only leaders)
+<br>
+<a th:href="@{/admin}">admin news</a>(only admin)
+<hr>
+<form th:action="@{/logout}" method="POST">
+    <input type="submit" value="logout">
+</form>
+</body>
+</html>

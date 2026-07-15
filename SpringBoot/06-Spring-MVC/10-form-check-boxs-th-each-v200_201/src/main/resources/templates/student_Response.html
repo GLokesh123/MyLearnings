@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello response</title>
+    <link rel="stylesheet" th:href="@{/css/stylo.css}"/>
+</head>
+<body>
+<h1 th:text=" 'Student is ' + ${student.firstName} + ' ' + ${student.lastName} + ' from '+${student.country}+'!!!' " class="funny"></h1>
+<h2 th:text="'His favorite language is :'+ ${student.favoriteLanguage}"></h2>
+<h2 th:text="'His favorite systems are '"></h2>
+<ol type="1"  >
+    <li th:each="temp:${student.favoriteSystems}" th:text="${temp}"></li>
+</ol>
+</body>
+</html>

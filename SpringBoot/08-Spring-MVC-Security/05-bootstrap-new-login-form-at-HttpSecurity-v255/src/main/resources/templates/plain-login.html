@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .errorMsg{
+        color:red
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/authenticateTheUser}" method="POST">
+    <i th:if="${param.error}" class="errorMsg">Incorrect username/password </i>
+    <p>
+        User name: <input type="text" name="username">
+    </p>
+    <p>
+        Password: <input type="text" name="password">
+    </p>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

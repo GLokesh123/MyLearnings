@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Form to hello</title>
+</head>
+<body>
+<form th:action="@{/student-response}"
+      th:object="${student}"
+      method="POST">
+
+    enter firstName:<input type="text"
+                   th:field="*{firstName}"
+                   placeholder="firstName here!"/>
+
+    <br><br>
+
+    enter lastName:<input type="text"
+                  th:field="*{lastName}"
+                  placeholder="lastName here!"/>
+
+    <br><br>
+
+    country:<select th:field="*{country}">
+              <option th:each="tempCountry : ${countries}"
+                      th:value="${tempCountry}"
+                      th:text="${tempCountry}"></option>
+            </select>
+
+    <br><br>
+
+    choose Language:<input type="radio"
+                            th:each="tempLang:${languages}"
+                             th:field="*{favoriteLanguage}"
+                             th:value="${tempLang}"
+                      th:text="${tempLang}">
+
+    <br><br>
+
+    choose Systems: <input type="checkbox"
+                           th:each="temp:${systems}"
+                           th:field="*{favoriteSystems}"
+                           th:value="${temp}"
+                           th:text="${temp}">
+
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

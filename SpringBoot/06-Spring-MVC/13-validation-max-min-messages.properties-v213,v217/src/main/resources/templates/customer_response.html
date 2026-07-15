@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>customer response</title>
+</head>
+<body>
+<h1
+        th:text="'The customer name is '
+        + ${customer.firstName}
+        +' '
+        +${customer.lastName}">
+
+</h1>
+<h2 th:text="'customer has '+${customer.coupons}+' coupons'"></h2>
+</body>
+</html>
